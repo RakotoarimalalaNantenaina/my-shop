@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Carte from './tables/UserTable'//fichier qui affiche les listes qui vont ajouter 
-import Commentaire from './commentaire'
 import AddUserForm from './ajouter'//fichier qui ajoute le formulaire d'ajout de produit
 import './App.css';
 
@@ -11,18 +10,9 @@ const App = () => {
 
   const [users, setUsers] = useState(usersData)
 
-
   const addUser = user => {
 		user.id = users.length
 		setUsers([ ...users, user ])
-  }
-  const Data = []
-
-  const [use, setUse] = useState(Data)
-
-  const commentajout = user => {
-		user.id = use.length + 1
-		setUse([ ...use, user ])
   }
 
 
@@ -33,9 +23,8 @@ const App = () => {
           <AddUserForm addUser={addUser} />
         </div><br></br>
         <div className="flex-large">
-          <Carte users={users} />
+          <Carte users={users}/>
         </div>
-        <Commentaire commentajout={commentajout}/>
       </div>
     </div>
   )
