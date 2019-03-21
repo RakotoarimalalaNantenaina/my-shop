@@ -1,62 +1,63 @@
 import React, { useState } from 'react'
+import './App.css';
 
 
+const Commentaire = () => {
 
-const Commentaire = props => {
+  const Data = []
 
-	const Data = []
-
-	const [use, setUse] = useState(Data)
+  const [use, setUse] = useState(Data)
 
   const commentajout = user => {
 		user.id = use.length + 1
 		setUse([ ...use, user ])
   }
 
-
 	const initialFormState = { id: null, commentaire: ''}
-	const [ user, setUsers ] = useState(initialFormState)
+	const [ usere, setUserse ] = useState(initialFormState)
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
 
-		setUsers({ ...user, [name]: value })
+		setUserse({ ...usere, [name]: value })
 	}
 
 	return (
 		<form
 			onSubmit={event => {
 				event.preventDefault()
-                if (!user.commentaire ) return
-					commentajout(user)
-					setUsers(initialFormState)	
+                if (!usere.commentaire ) return
+					commentajout(usere)
+					setUserse(initialFormState)	
 			}}
-		>	<center className="tableau">
+		>	
 
-          <table>
+          <table id="tablecommentaire">
             <tbody>
               <tr>
-                <td><input type="text" name="commentaire" value={user.commentaire} onChange={handleInputChange} /></td>
+                <td><input type="text" name="commentaire" value={usere.commentaire} onChange={handleInputChange} />
+                &nbsp;<button className="btn btn-primary btn-lg">Comment</button>
+                </td>
               </tr><br/>
             </tbody>
             </table>
-            <button className="btn btn-primary btn-lg">Comment</button>
-
-						{use.length > 0 ? (
-        use.map(user => (
-          <tr key={user.id}>
-            <td>{user.id}</td>
-            <td>{user.commentaire}</td>
-          </tr>
-					
-        ))
-      ) : (
-        <tr>
-          <td>aucune commentaire</td>
-        </tr>
-      )}
-					
-    </center>
+           
+              <table><hr id="ligne"/>
+                {use.length > 0 ? (
+                    use.map(usere => (
+                      <tbody>
+                    <tr key={usere.id}>
+                    <td id="tdcomment"><div id="word">{usere.commentaire}</div></td>
+                  </tr><hr id="ligne"/>
+                    </tbody>  
+              ))
+            ) : (
+              <tr>
+                <td></td>
+              </tr>
+            )}
+                </table>
+     
 
 		</form>
 	)

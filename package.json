@@ -12,6 +12,7 @@
     "react-dropzone": "^10.0.4",
     "react-image": "^2.0.0",
     "react-images-upload": "^1.2.6",
+    "react-modal": "^3.8.1",
     "react-popup": "^0.10.0",
     "react-scripts": "2.1.8"
   },

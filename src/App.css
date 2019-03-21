@@ -77,10 +77,34 @@ textarea {
 }
 #commentaire {
   color: red;
+  cursor: pointer; 
 }
 #point {
-  overflow:hidden
+  overflow: hidden;
+  position: relative; 
+  line-height: 1.2em;
+  max-height: 3.6em;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
 }
+
+#point:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#point:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+ }
+
 .tableau {
   border: 2px solid rgb(104, 85, 85);
   border-radius: 5px;
@@ -92,6 +116,7 @@ textarea {
   color: red;
   width: 20px;
   height: 10px;
+  cursor: pointer;
 }
 input[type="file"]{ 
   display: none; 
@@ -111,4 +136,37 @@ input[type="file"]{
   padding-top: 5px!important; 
   line-height: 30px;
   font-weight: bold
+}
+#ligne {
+  width: 360px;
+  height: 5;
+  background-color: blueviolet;
+}
+#tdcomment {
+  color: cadetblue;
+  font-style: italic;
+  font-weight: bold;
+  padding-left: 30px;
+  word-wrap: break-word;
+}
+.popups {
+  border: 2px solid rgb(104, 85, 85);
+  border-radius: 5px;
+  width: 400px;
+  margin-left: 300px;
+  padding: 10px 10px 20px 20px;
+}
+#btnpopups {
+  margin-left: 330px;
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+ text-align: left;
+}
+#tablecommentaire {
+  margin-top: 20px;
+}
+#word {
+  word-wrap: break-word;
+  width: 300px;
 }
